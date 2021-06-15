@@ -5,34 +5,34 @@ function Header() {
   return (
     <div>
       <Nav>
-        <Logo src="/images/logo.svg" />
+        <Logo src="/images/logo.svg" alt="Disney Logo" />
         <NavMenu>
-          <a>
-            <img src="/images/home-icon.svg" />
+          <button>
+            <img src="/images/home-icon.svg" alt="Home icon" />
             <span>HOME</span>
-          </a>
-          <a>
-            <img src="/images/search-icon.svg" />
+          </button>
+          <button>
+            <img src="/images/search-icon.svg" alt="Search icon" />
             <span>SEARCH</span>
-          </a>
-          <a>
-            <img src="/images/watchlist-icon.svg" />
+          </button>
+          <button>
+            <img src="/images/watchlist-icon.svg" alt="Watchlist icon" />
             <span>WATHLIST</span>
-          </a>
-          <a>
-            <img src="/images/original-icon.svg" />
+          </button>
+          <button>
+            <img src="/images/original-icon.svg" alt="Original icon" />
             <span>ORIGINAL</span>
-          </a>
-          <a>
-            <img src="/images/movie-icon.svg" />
+          </button>
+          <button>
+            <img src="/images/movie-icon.svg" alt="Movie icon" />
             <span>MOVIES</span>
-          </a>
-          <a>
-            <img src="/images/series-icon.svg" />
+          </button>
+          <button>
+            <img src="/images/series-icon.svg" alt="Series icon" />
             <span>SERIES</span>
-          </a>
+          </button>
         </NavMenu>
-        <UserImg src="/images/pp-icon.svg" />
+        <UserImg src="/images/pp-icon.svg" alt="Profile pic" />
       </Nav>
     </div>
   )
@@ -57,7 +57,11 @@ const NavMenu = styled.div`
   flex-basis: 100%;
   margin-left: 25px;
 
-  a {
+  button {
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border: none;
     display: flex;
     align-items: center;
     padding: 0 12px;

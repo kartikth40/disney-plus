@@ -36,6 +36,15 @@ function Detail() {
           <img src="/images/group-icon.png" />
         </GroupWatchButton>
       </Controls>
+
+      <SubTitle>2018 • 7m • Family, Fantasy, Kids, Animation</SubTitle>
+
+      <Description>
+        An aging Chinese mom suffering from empty nest syndrome gets another chance at motherhood when one of her
+        dumplings springs to life as a lively, giggly dumpling boy. Mom excitedly welcomes this new bundle of joy into
+        her life, but Dumpling starts growing up fast, and Mom must come to the bittersweet revelation that nothing
+        stays cute and small forever.
+      </Description>
     </Container>
   )
 }
@@ -127,4 +136,18 @@ const AddButton = styled.button`
 
 const GroupWatchButton = styled(AddButton)`
   background: rgba(0, 0, 0, 0.7);
+`
+
+const SubTitle = styled.div`
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  min-height: 20px;
+  margin-top: 20px;
+`
+
+const Description = styled.div`
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+  font-size: 20px;
+  margin-top: 15px;
 `

@@ -1,35 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
+import { selectMovies } from '../features/movie/movieSlice'
+import { useSelector } from 'react-redux'
 
 function Movies() {
+  const movies = useSelector(selectMovies)
+  console.log(movies)
+
   return (
     <Container>
       <h4>Recommended for You</h4>
       <Content>
-        <Wrap>
-          <img src="https://thedirect.s3.amazonaws.com/media/article_full/lokspos.jpg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://thedirect.s3.amazonaws.com/media/article_full/lokspos.jpg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://thedirect.s3.amazonaws.com/media/article_full/lokspos.jpg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://thedirect.s3.amazonaws.com/media/article_full/lokspos.jpg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://thedirect.s3.amazonaws.com/media/article_full/lokspos.jpg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://thedirect.s3.amazonaws.com/media/article_full/lokspos.jpg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://thedirect.s3.amazonaws.com/media/article_full/lokspos.jpg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://thedirect.s3.amazonaws.com/media/article_full/lokspos.jpg" />
-        </Wrap>
+        {movies &&
+          movies.map((movie) => (
+            <Wrap key={movie.id}>
+              <img src={movie.cardImg} alt={movie.title} />
+            </Wrap>
+          ))}
       </Content>
     </Container>
   )

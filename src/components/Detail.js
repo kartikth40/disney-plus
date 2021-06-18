@@ -7,7 +7,7 @@ function Detail() {
       <Background>
         <img
           src="https://lumiere-a.akamaihd.net/v1/images/bao-woman-with-dumpling_4bc6fd44.jpeg?region=0,0,1200,675"
-          alt="detail page background image"
+          alt="detail page background"
         />
       </Background>
       <ImageTitle>
@@ -19,12 +19,12 @@ function Detail() {
 
       <Controls>
         <PlayButton>
-          <img src="/images/play-icon-black.png" />
+          <img src="/images/play-icon-black.png" alt="Movie play button" />
           <span>Play</span>
         </PlayButton>
 
         <TrailerButton>
-          <img src="/images/play-icon-white.png" />
+          <img src="/images/play-icon-white.png" alt="Trailer play button" />
           <span>Trailer</span>
         </TrailerButton>
 
@@ -33,7 +33,7 @@ function Detail() {
         </AddButton>
 
         <GroupWatchButton>
-          <img src="/images/group-icon.png" />
+          <img src="/images/group-icon.png" alt="Group Watch button" />
         </GroupWatchButton>
       </Controls>
 

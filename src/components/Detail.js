@@ -1,20 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { useParams } from 'react-router-dom'
+import db from '../firebase'
 
 function Detail() {
+  const { id } = useParams()
+  const [movie, setMovie] = useState()
+
+  useEffect(() => {
+    db.collection('movies')
+      .doc(id)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          setMovie(doc.data())
+        } else {
+          console.log('not found')
+        }
+      })
+  }, [id])
+
+  if (!movie) return <Container>no movie details found!</Container>
   return (
     <Container>
       <Background>
-        <img
-          src="https://lumiere-a.akamaihd.net/v1/images/bao-woman-with-dumpling_4bc6fd44.jpeg?region=0,0,1200,675"
-          alt="detail page background"
-        />
+        <img src={movie.backgroundImg} alt={movie.title + ' background'} />
       </Background>
       <ImageTitle>
-        <img
-          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D7AEE1F05D10FC37C873176AAA26F777FC1B71E7A6563F36C6B1B497CAB1CEC2/scale?width=1440&aspectRatio=1.78"
-          alt="bao logo"
-        />
+        <img src={movie.titleImg} alt={movie.title + ' logo'} />
       </ImageTitle>
 
       <Controls>
@@ -37,14 +50,9 @@ function Detail() {
         </GroupWatchButton>
       </Controls>
 
-      <SubTitle>2018 • 7m • Family, Fantasy, Kids, Animation</SubTitle>
+      <SubTitle>{movie.subTitle}</SubTitle>
 
-      <Description>
-        An aging Chinese mom suffering from empty nest syndrome gets another chance at motherhood when one of her
-        dumplings springs to life as a lively, giggly dumpling boy. Mom excitedly welcomes this new bundle of joy into
-        her life, but Dumpling starts growing up fast, and Mom must come to the bittersweet revelation that nothing
-        stays cute and small forever.
-      </Description>
+      <Description>{movie.description}</Description>
     </Container>
   )
 }
@@ -52,8 +60,8 @@ function Detail() {
 export default Detail
 
 const Container = styled.div`
-  min-height: calc(100vh - 70px);
-  padding: 0 3.5vw 3.5vw;
+  min-height: 100vh;
+  padding: 70px 3.5vw 3.5vw;
   position: relative;
 `
 const Background = styled.div`

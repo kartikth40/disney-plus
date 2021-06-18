@@ -32,8 +32,8 @@ function Home() {
 export default Home
 
 const Container = styled.main`
-  min-height: calc(100vh - 70px);
-  padding: 0 3.5vw 3.5vw;
+  min-height: 100vh;
+  padding: 70px 3.5vw 3.5vw;
   position: relative;
   overflow: hidden;
 

@@ -1,6 +1,6 @@
 # Disney Plus Clone
 
-[Clone running video](https://user-images.githubusercontent.com/53307443/122673081-79bf4f80-d1ec-11eb-95f8-f2e23c4cad0d.mp4)
+[Clone running video](https://user-images.githubusercontent.com/53307443/122673992-de7ca900-d1f0-11eb-884d-3a49694251c0.mp4)
 
 > Its a Disney plus clone made with react, react-redux, stylized-components.
 
